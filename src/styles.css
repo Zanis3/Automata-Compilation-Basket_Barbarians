@@ -11,7 +11,7 @@
     --color-leftmost-unselected: #5572A4;
 
     /* MAIN SIDEBAR */
-    --color-sidebar: #21222C; /* ALSO USED IN NAV */
+    --color-sidebar: #21222C;    /* ALSO USED IN NAV */
     --color-sidebar-selected: #313341;
     --color-sidebar-selected-border: #6272A4;
 
@@ -21,5 +21,18 @@
     --color-top-x-hover: #383A42;
 
     /* EDITOR */
-    --color-editor: #282A36; /* ALSO USED IN NAV */
+    --color-editor: #282A36;     /* ALSO USED IN NAV */
+
+    /* TEXT COLORS INSIDE EDITOR (JAVA) */
+    /* WHITE FOR VARIABLE NAMES, ALSO USED IN MARKDOWN */
+    --color-classes: #61DDFD;    /* CLASS NAMES / "()" */
+    --color-methods: #50FA7B;    /* METHODS / FUNCTIONS */
+    --color-keywords: #DC79BD;   /* KEYWORDS / "=" / "*" */
+    --color-quote-text: #BDED8C; /* QUOTE TEXT */
+    --color-values: #9C93F9;     /* VALUES - ALSO USED IN MARKDOWN FOR HEADINGS */
+    --color-comments: #6272A4;   /* COMMENTS - ALSO USED IN MARKDOWN FOR ITALIC TEXT */
+
+
+    /* TEXT COLORS INSIDE EDITOR (MARKDOWN) */
+    --color-md-bold: #FFB86C;   /* MARKDOWN BOLD TEXT - ALSO USED IN JAVA FOR "args" */
 }

@@ -20,7 +20,7 @@ import {
   NotepadText,
 } from "lucide-react";
 
-export default function Sidebar() {
+export default function Sidebar({ activeFile, setActiveFile }) {
   //LEFTMOST ICONS
   const leftmostIcons = [Search, GitFork, Play, Blocks];
 
@@ -96,16 +96,24 @@ export default function Sidebar() {
           {/* LIST OF THE PROGRAMS */}
           {list && (
             <ul className="w-full">
-              {sidebarItems.map((item, index) => (
-                <li
-                  key={index}
-                  className="w-full flex items-center gap-1.5 px-5 py-0.5 hover:bg-sidebar-selected cursor-pointer"
-                >
-                  <Coffee size={14} className="text-red-300" />
-                  <p>{item}</p>
-                </li>
-              ))}
-              <li className="w-full flex items-center gap-1.5 px-5 py-0.5 hover:bg-sidebar-selected cursor-pointer">
+              {sidebarItems.map((item, index) => {
+                const isActive = activeFile === item;
+
+                return (
+                  <li
+                    onClick={() => setActiveFile(item)}
+                    key={index}
+                    className={`w-full flex items-center gap-1.5 px-5 py-0.5 hover:bg-sidebar-selected cursor-pointer ${isActive ? "bg-sidebar-selected" : ""}`}
+                  >
+                    <Coffee size={14} className="text-red-300" />
+                    <p>{item}</p>
+                  </li>
+                );
+              })}
+              <li
+                onClick={() => setActiveFile("Members.md")}
+                className={`w-full flex items-center gap-1.5 px-5 py-0.5 hover:bg-sidebar-selected cursor-pointer ${activeFile === "Members.md" ? "bg-sidebar-selected" : ""}`}
+              >
                 <NotepadText size={14} className="text-blue-300" />
                 <p>Members.md</p>
               </li>
