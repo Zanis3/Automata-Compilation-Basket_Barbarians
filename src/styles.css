@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme{
+    --font-sidebar: 'Segoe WPC', 'Segoe UI', sans-serif;
+    --font-code: 'Consolas', sans-serif;
+
+    /* LEFTMOST SIDEBAR */
+    --color-leftmost: #343746;
+    --color-leftmost-hover: #3C3D51;
+    --color-leftmost-hover-border: #9E5B8B; /* ALSO USED IN NAV */
+    --color-leftmost-unselected: #5572A4;
+
+    /* MAIN SIDEBAR */
+    --color-sidebar: #21222C; /* ALSO USED IN NAV */
+    --color-sidebar-selected: #313341;
+    --color-sidebar-selected-border: #6272A4;
+
+    /* NAV TOP */
+    --color-top-background: #191A21;
+    --color-top-text-unselected: #586692;
+    --color-top-x-hover: #383A42;
+
+    /* EDITOR */
+    --color-editor: #282A36; /* ALSO USED IN NAV */
+}
