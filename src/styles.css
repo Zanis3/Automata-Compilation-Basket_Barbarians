@@ -28,9 +28,9 @@
     --color-classes: #61DDFD;    /* CLASS NAMES / "()" */
     --color-methods: #50FA7B;    /* METHODS / FUNCTIONS */
     --color-keywords: #DC79BD;   /* KEYWORDS / "=" / "*" */
-    --color-quote-text: #BDED8C; /* QUOTE TEXT */
+    --color-quote-text: #BDED8C; /* QUOTE TEXT - ALSO USED IN MARKDOWN FOR ITALIC TEXT */
     --color-values: #9C93F9;     /* VALUES - ALSO USED IN MARKDOWN FOR HEADINGS */
-    --color-comments: #6272A4;   /* COMMENTS - ALSO USED IN MARKDOWN FOR ITALIC TEXT */
+    --color-comments: #6272A4;   /* COMMENTS */
 
 
     /* TEXT COLORS INSIDE EDITOR (MARKDOWN) */

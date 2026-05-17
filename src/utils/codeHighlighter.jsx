@@ -171,3 +171,151 @@ export const tokenizeJava = (code) => {
     </div>
   );
 };
+
+// Tokenize Markdown into spans with appropriate colors
+export const tokenizeMarkdown = (code) => {
+  if (!code) return null;
+  const lines = code.split("\n");
+
+  const lineElements = lines.map((line, lineIdx) => {
+    const tokens = [];
+    let remaining = line;
+    let idx = 0;
+
+    while (remaining.length > 0) {
+      // Spaces
+      const spaceMatch = remaining.match(/^([ \t\r]+)/);
+      if (spaceMatch) {
+        tokens.push(<span key={idx}>{spaceMatch[1]}</span>);
+        remaining = remaining.slice(spaceMatch[1].length);
+        idx++;
+        continue;
+      }
+
+      // Heading: # ## ### #### ##### ###### — color the entire line
+      const headingMatch = remaining.match(/^(#{1,6})\s(.+)$/);
+      if (headingMatch) {
+        tokens.push(
+          <span key={idx} className="text-values">
+            {headingMatch[0]}
+          </span>,
+        );
+        remaining = "";
+        idx++;
+        continue;
+      }
+
+      // Bold (**text**)
+      const boldMatch = remaining.match(/^(\*\*[^*]+\*\*)/);
+      if (boldMatch) {
+        tokens.push(
+          <span key={idx} className="text-md-bold">
+            {boldMatch[1]}
+          </span>,
+        );
+        remaining = remaining.slice(boldMatch[1].length);
+        idx++;
+        continue;
+      }
+
+      // Italic (*text*)
+      const italicMatch = remaining.match(/^(\*[^*]+\*)/);
+      if (italicMatch) {
+        tokens.push(
+          <span key={idx} className="text-quote-text">
+            {italicMatch[1]}
+          </span>,
+        );
+        remaining = remaining.slice(italicMatch[1].length);
+        idx++;
+        continue;
+      }
+
+      // Inline code (`code`)
+      const codeMatch = remaining.match(/^(`[^`]+`)/);
+      if (codeMatch) {
+        tokens.push(
+          <span key={idx} className="text-comments">
+            {codeMatch[1]}
+          </span>,
+        );
+        remaining = remaining.slice(codeMatch[1].length);
+        idx++;
+        continue;
+      }
+
+      // Blockquote prefix >
+      const blockquoteMatch = remaining.match(/^(>\s?)/);
+      if (blockquoteMatch) {
+        tokens.push(
+          <span key={idx} className="text-comments">
+            {blockquoteMatch[1]}
+          </span>,
+        );
+        remaining = remaining.slice(blockquoteMatch[1].length);
+        idx++;
+        continue;
+      }
+
+      // Horizontal rule ---
+      const hrMatch = remaining.match(/^(-{3,})\s*$/);
+      if (hrMatch) {
+        tokens.push(
+          <span key={idx} className="text-comments">
+            {hrMatch[1]}
+          </span>,
+        );
+        remaining = remaining.slice(hrMatch[1].length);
+        idx++;
+        continue;
+      }
+
+      // Unordered list item prefix - or *
+      const listMatch = remaining.match(/^([-*]\s)/);
+      if (listMatch) {
+        tokens.push(
+          <span key={idx} className="text-comments">
+            {listMatch[1]}
+          </span>,
+        );
+        remaining = remaining.slice(listMatch[1].length);
+        idx++;
+        continue;
+      }
+
+      // Ordered list item prefix (1. 2. etc.)
+      const orderedListMatch = remaining.match(/^(\d+\.\s)/);
+      if (orderedListMatch) {
+        tokens.push(
+          <span key={idx} className="text-comments">
+            {orderedListMatch[1]}
+          </span>,
+        );
+        remaining = remaining.slice(orderedListMatch[1].length);
+        idx++;
+        continue;
+      }
+
+      // Default: any other character — plain white
+      tokens.push(
+        <span key={idx} className="text-white whitespace-pre">
+          {remaining[0]}
+        </span>,
+      );
+      remaining = remaining.slice(1);
+      idx++;
+    }
+
+    return (
+      <div key={lineIdx} className="whitespace-pre">
+        {tokens}
+      </div>
+    );
+  });
+
+  return (
+    <div className="whitespace-pre font-code text-[14px] leading-relaxed">
+      {lineElements}
+    </div>
+  );
+};

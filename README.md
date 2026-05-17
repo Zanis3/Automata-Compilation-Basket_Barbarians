@@ -1,27 +1,27 @@
 # Automata Compilation Activity
 
-**A simple compilation for our Automata subject containing the following:**
-
-1. Palindrome Checker
-2. Division Algorithm
-3. Recursion
-4. Collatz Sequence
-5. Euclidean Algorithm
-
-**Technologies Used:** React, TailwindCSS, LucideIcons
+## Group Name: Basket Barbarians
+## Section: III-DCSAD
 
 ---
-## The Basket Barbarians
 
-**Members:**
-IBAY, Charles Allen T.
-MANZANILLO, Maveric Brycel
-PAGAD, Euvert Zion P.
-Taligatos, John Lenard M.
+### Members
+- IBAY, Charles Allen T.
+- MANZANILLO, Maveric Brycel
+- PAGAD, Euvert Zion P.
+- TALIGATOS, John Lenard M.
 
+### Submitted in Partial Fulfilments To:
+*AUTOMATA THEORY AND FORMAL LANGUAGES*
 
-*AUTOMATA III-DCSAD*
-*PROF. LESTER DIAMPOC*
+### Submitted to:
+**Prof. Lester G. Diampoc, Associate Proffesor**
 
+---
 
-*This is for academic use only!*
+### Technologies Used
+- React.js (JavaScript)
+- TailwindCSS
+- LucideIcons
+
+*This project is for academic purposes only!*
