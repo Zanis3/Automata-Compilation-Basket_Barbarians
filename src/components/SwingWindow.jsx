@@ -124,7 +124,7 @@ export default function SwingWindow({
     >
       <div
         ref={windowRef}
-        className="absolute bg-[#3C3C3C] rounded-sm shadow-2xl border border-[#666666] overflow-hidden max-sm:left-2! max-sm:right-2! max-sm:top-15! max-sm:bottom-2! max-sm:w-auto! max-sm:h-auto!"
+        className="absolute bg-[#3C3C3C] rounded-sm shadow-2xl border border-[#666666] overflow-hidden max-sm:left-2! max-sm:right-2! max-sm:top-2! max-sm:bottom-2! max-sm:w-auto! max-sm:h-auto!"
         style={{
           left: position.x,
           top: position.y,
