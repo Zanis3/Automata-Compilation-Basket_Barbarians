@@ -370,7 +370,7 @@ public class RecursionAutomataLab
             }
             if (i < seq.length - 1) 
             {
-                result += ", ";
+                result += " , ";
             }
         }
         return result;

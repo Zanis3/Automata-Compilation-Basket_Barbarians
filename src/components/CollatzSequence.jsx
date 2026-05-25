@@ -80,8 +80,8 @@ public class Collatz_Sequence extends JFrame {
 
         try {
             int n = Integer.parseInt(inputField.getText());
-            output.append("This program will find all the terms of the Collatz sequence.\\n");
-            output.append("Input the initial value: ").append(n).append("\\n");
+            output.append("This program will find all the terms of the Collatz sequence.\\n\\n");
+            output.append("Input the initial value: ").append(String.format("%,d", n)).append("\\n");
 
             if (n <= 0) {
                 output.append("INVALID OUTPUT");
@@ -95,10 +95,10 @@ public class Collatz_Sequence extends JFrame {
                 return;
             }
 
-            output.append("The Collatz sequence are: ");
+            output.append("The Collatz sequence are:\\n");
 
             while (n != 1) {
-                output.append(n).append(", ");
+                output.append(String.format("%,d", n)).append(" ➜ ");
 
                 if (n % 2 == 0) {
                     n = n / 2;

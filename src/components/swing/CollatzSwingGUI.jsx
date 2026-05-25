@@ -14,13 +14,14 @@ export default function CollatzSwingGUI() {
       return;
     }
 
-    result += "This program will find all the terms of the Collatz sequence.\n";
-    result += "Input the initial value: " + n + "\n";
-    result += "The Collatz sequence are: ";
+    result +=
+      "This program will find all the terms of the Collatz sequence.\n\n";
+    result += "Initial value: " + n.toLocaleString() + "\n";
+    result += "The Collatz sequence are:\n";
 
     let current = n;
     while (current !== 1) {
-      result += current + ", ";
+      result += current.toLocaleString() + " ➜ ";
       if (current % 2 === 0) {
         current = current / 2;
       } else {
@@ -44,7 +45,7 @@ export default function CollatzSwingGUI() {
           Input The Initial Value:
         </label>
         <input
-          className="bg-[#1E1E1E] text-[#DCDCDC] border border-[#666666] px-1.5 py-0.5 text-[12px] font-sans outline-none focus:border-[#0058E6] w-[80px]"
+          className="bg-[#1E1E1E] text-[#DCDCDC] border border-[#666666] px-1.5 py-0.5 text-[12px] font-sans outline-none focus:border-[#0058E6] w-20"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function buildSequenceString(seq) {
-  return seq.map((n) => (n >= 1000 ? n.toLocaleString() : n)).join(", ");
+  return seq.map((n) => (n >= 1000 ? n.toLocaleString() : n)).join(" , ");
 }
 
 export default function RecursionSwingGUI() {
