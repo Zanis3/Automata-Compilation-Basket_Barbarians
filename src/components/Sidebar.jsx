@@ -111,8 +111,8 @@ export default function Sidebar({ activeFile, setActiveFile }) {
                 );
               })}
               <li
-                onClick={() => setActiveFile("Members.md")}
-                className={`w-full flex items-center gap-1.5 px-5 py-0.5 hover:bg-sidebar-selected cursor-pointer ${activeFile === "Members.md" ? "bg-sidebar-selected" : ""}`}
+                onClick={() => setActiveFile("README.md")}
+                className={`w-full flex items-center gap-1.5 px-5 py-0.5 hover:bg-sidebar-selected cursor-pointer ${activeFile === "README.md" ? "bg-sidebar-selected" : ""}`}
               >
                 <NotepadText size={14} className="text-blue-300" />
                 <p>READNE.md</p>

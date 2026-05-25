@@ -4,7 +4,7 @@ import TextEditor from "./components/TextEditor";
 
 export default function App() {
   //OPENS THE SELECTED FILE
-  const [activeFile, setActiveFile] = useState("Members.md");
+  const [activeFile, setActiveFile] = useState("README.md");
 
   return (
     <main className="flex w-full h-screen overflow-hidden">
