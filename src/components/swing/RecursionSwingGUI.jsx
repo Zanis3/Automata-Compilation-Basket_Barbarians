@@ -37,7 +37,7 @@ export default function RecursionSwingGUI() {
 
   const computeLucas = () => {
     const n = parseInt(lucInput.trim());
-    if (isNaN(n) || n <= 2) {
+    if (isNaN(n) || !Number.isInteger(n) || n <= 2) {
       setLucOutput("Invalid input. Number of terms must be greater than 2.");
       return;
     }
@@ -59,7 +59,7 @@ export default function RecursionSwingGUI() {
 
   const computeTribonacci = () => {
     const n = parseInt(triInput.trim());
-    if (isNaN(n) || n <= 3) {
+    if (isNaN(n) || !Number.isInteger(n) || n <= 3) {
       setTriOutput("Invalid input. Number of terms must be greater than 3.");
       return;
     }
