@@ -15,8 +15,8 @@ export default function RecursionSwingGUI() {
 
   const computeFibonacci = () => {
     const n = parseInt(fibInput.trim());
-    if (isNaN(n) || n <= 2) {
-      setFibOutput("Invalid input. Number of terms must be greater than 2.");
+    if (isNaN(n) || !Number.isInteger(n) || n <= 2) {
+      setFibOutput("Invalid input. Number of terms must be a whole number greater than 2.");
       return;
     }
     const seq = new Array(n);
