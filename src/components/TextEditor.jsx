@@ -31,7 +31,7 @@ export default function TextEditor({ activeFile }) {
         return <PalindromeChecker />;
       case "Recursion.java":
         return <Recursion />;
-      case "Members.md":
+      case "README.md":
         return <Members />;
       default:
         return (
