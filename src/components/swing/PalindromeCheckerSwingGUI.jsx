@@ -47,10 +47,10 @@ export default function PalindromeCheckerSwingGUI() {
     }
 
     if (palindrome) {
-      setResult('The word "' + str + '" is a palindrome!');
+      setResult('The string "' + str + '" is a palindrome!');
       setIsPalindrome(true);
     } else {
-      setResult('The word "' + str + '" is not a palindrome.');
+      setResult('The string "' + str + '" is not a palindrome.');
       setIsPalindrome(false);
     }
 

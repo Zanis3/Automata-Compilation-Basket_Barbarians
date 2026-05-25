@@ -14,6 +14,11 @@ export default function EuclideanAlgorithmSwingGUI() {
       return;
     }
 
+    if (a == 0 || b == 0){
+      setOutput("One or both values are zero. Please try again.");
+      return;
+    }
+
     const m = a > b ? a : b;
     const n = a > b ? b : a;
 

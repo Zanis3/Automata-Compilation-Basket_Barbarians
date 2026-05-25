@@ -126,13 +126,13 @@ public class PalindromeChecker extends JFrame implements ActionListener {
 
             if (!valid) {
                 lblPalindromeResult.setForeground(Color.RED);
-                lblPalindromeResult.setText("The input was not a valid word.");
+                lblPalindromeResult.setText("The input was not a valid string.");
             } else if (palindrome) {
                 lblPalindromeResult.setForeground(Color.GREEN);
-                lblPalindromeResult.setText("The word " + input + " is a palindrome!");
+                lblPalindromeResult.setText("The string " + input + " is a palindrome!");
             } else {
                 lblPalindromeResult.setForeground(Color.RED);
-                lblPalindromeResult.setText("The word " + input + " is not a palindrome.");
+                lblPalindromeResult.setText("The string " + input + " is not a palindrome.");
             }
 
             lblLength.setText("Length: " + length);
