@@ -15,7 +15,7 @@
 *AUTOMATA THEORY AND FORMAL LANGUAGES*
 
 ### Submitted to:
-**Prof. Lester G. Diampoc, Associate Proffesor**
+**Prof. Lester G. Diampoc, MSME**
 
 ---
 

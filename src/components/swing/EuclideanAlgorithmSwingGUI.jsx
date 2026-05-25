@@ -27,7 +27,13 @@ export default function EuclideanAlgorithmSwingGUI() {
       const remainder = dividend % divisor;
 
       if (remainder === 0) {
-        result += dividend + " = " + divisor + "(" + quotient + ")\n";
+        result +=
+          dividend.toLocaleString() +
+          " = " +
+          divisor.toLocaleString() +
+          "(" +
+          quotient.toLocaleString() +
+          ")\n";
         gcd = divisor;
         break;
       } else {
@@ -48,11 +54,22 @@ export default function EuclideanAlgorithmSwingGUI() {
 
     const lcm = (m * n) / gcd;
 
-    result += "\nThe integers are " + m + " and " + n;
     result +=
-      "\nThe greatest common divisor of " + m + " and " + n + " is " + gcd;
+      "\nThe integers are " + m.toLocaleString() + " and " + n.toLocaleString();
     result +=
-      "\nThe least common multiplier of " + m + " and " + n + " is " + lcm;
+      "\nThe greatest common divisor of " +
+      m.toLocaleString() +
+      " and " +
+      n.toLocaleString() +
+      " is " +
+      gcd.toLocaleString();
+    result +=
+      "\nThe least common multiplier of " +
+      m.toLocaleString() +
+      " and " +
+      n.toLocaleString() +
+      " is " +
+      lcm.toLocaleString();
 
     setOutput(result);
   };

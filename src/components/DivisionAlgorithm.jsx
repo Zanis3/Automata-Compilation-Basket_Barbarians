@@ -146,12 +146,12 @@ public class DivisionAlgorithm extends JFrame implements ActionListener {
                 int quotient = dividend / divisor;
                 int remainder = dividend % divisor;
 
-                String solution = dividend + " = " + divisor + " (" + quotient + ") + " + remainder;
+                String solution = String.format("%,d = %,d (%,d) + %,d", dividend, divisor, quotient, remainder);
                 txtSolution.setText(solution);
 
-                lblDividend.setText("The dividend is " + dividend);
-                lblDivisor.setText("The divisor is " + divisor);
-                lblQuotientRemainder.setText("The quotient is " + quotient + " and the remainder is " + remainder);
+                lblDividend.setText(String.format("The dividend is %,d", dividend));
+                lblDivisor.setText(String.format("The divisor is %,d", divisor));
+                lblQuotientRemainder.setText(String.format("The quotient is %,d and the remainder is %,d", quotient, remainder));
 
             } catch (NumberFormatException ex) {
                 txtSolution.setForeground(Color.RED);

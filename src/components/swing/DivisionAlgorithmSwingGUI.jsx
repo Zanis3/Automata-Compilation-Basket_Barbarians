@@ -30,12 +30,21 @@ export default function DivisionAlgorithmSwingGUI() {
     const remainder = dividendVal % divisorVal;
 
     setSolution(
-      dividendVal + " = " + divisorVal + " (" + quotient + ") + " + remainder,
+      dividendVal.toLocaleString() +
+        " = " +
+        divisorVal.toLocaleString() +
+        " (" +
+        quotient.toLocaleString() +
+        ") + " +
+        remainder.toLocaleString(),
     );
-    setDividend("The dividend is " + dividendVal);
-    setDivisor("The divisor is " + divisorVal);
+    setDividend("The dividend is " + dividendVal.toLocaleString());
+    setDivisor("The divisor is " + divisorVal.toLocaleString());
     setQuotientRemainder(
-      "The quotient is " + quotient + " and the remainder is " + remainder,
+      "The quotient is " +
+        quotient.toLocaleString() +
+        " and the remainder is " +
+        remainder.toLocaleString(),
     );
   };
 

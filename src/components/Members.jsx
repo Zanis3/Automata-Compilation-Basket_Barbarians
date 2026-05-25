@@ -4,6 +4,7 @@ const markdownContent = `# Automata Compilation Activity
 
 ## Group Name: Basket Barbarians
 ## Section: III-DCSAD
+
 ---
 
 ### Members
@@ -12,17 +13,19 @@ const markdownContent = `# Automata Compilation Activity
 - PAGAD, Euvert Zion P.
 - TALIGATOS, John Lenard M.
 
-### Submitted in partial fulfilments to:
-**AUTOMATA THEORY AND FORMAL LANGUAGES**
+### Submitted in Partial Fulfilments To:
+*AUTOMATA THEORY AND FORMAL LANGUAGES*
 
 ### Submitted to:
-**Prof. Lester G. Diampoc, Associate Professor**
+**Prof. Lester G. Diampoc, MSME**
+
 ---
+
 ### Technologies Used
 - React.js (JavaScript)
 - TailwindCSS
 - LucideIcons
--
+
 *This project is for academic purposes only!*
 `;
 

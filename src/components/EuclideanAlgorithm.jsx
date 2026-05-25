@@ -109,11 +109,11 @@ public class EuclideanAlgorithm {
                             sCount++;
 
                             if (remainder == 0) {
-                                sb.append(dividend + " = " + divisor + "(" + quotient + ")\\n");
+                                sb.append(String.format("%,d = %,d(%,d)\n", dividend, divisor, quotient));
                                 gcd = divisor;
                                 break;
                             } else {
-                                sb.append(dividend + " = " + divisor + "(" + quotient + ")" + " + " + remainder + "\\n");
+                                sb.append(String.format("%,d = %,d(%,d) + %,d\n", dividend, divisor, quotient, remainder));
                             }
                             dividend = divisor;
                             divisor = remainder;
@@ -121,9 +121,9 @@ public class EuclideanAlgorithm {
 
                         lcm = (m * n) / gcd;
 
-                        sb.append("\\nThe integers are " + m + " and " + n);
-                        sb.append("\\nThe greatest common divisor of " + m + " and " + n + " is " + gcd);
-                        sb.append("\\nThe least common multiplier of " + m + " and " + n + " is " + lcm);
+                        sb.append(String.format("\nThe integers are %,d and %,d", m, n));
+                        sb.append(String.format("\nThe greatest common divisor of %,d and %,d is %,d", m, n, gcd));
+                        sb.append(String.format("\nThe least common multiplier of %,d and %,d is %,d", m, n, lcm));
 
                         output.setText(sb.toString());
                     }

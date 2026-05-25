@@ -160,7 +160,7 @@ export const tokenizeJava = (code) => {
 
     return (
       <div key={lineIdx} className="whitespace-pre">
-        {tokens}
+        {tokens.length === 0 ? "\u00A0" : tokens}
       </div>
     );
   });
@@ -308,7 +308,7 @@ export const tokenizeMarkdown = (code) => {
 
     return (
       <div key={lineIdx} className="whitespace-pre">
-        {tokens}
+        {tokens.length === 0 ? "\u00A0" : tokens}
       </div>
     );
   });
