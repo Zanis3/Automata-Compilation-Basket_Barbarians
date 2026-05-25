@@ -98,26 +98,31 @@ public class EuclideanAlgorithm {
                         StringBuilder sb = new StringBuilder();
                         sb.append("SOLUTION:\\n");
 
-                        while (true) {
-                            quotient = dividend / divisor;
-                            remainder = dividend % divisor;
-
-                            sDividend[sCount] = dividend;
-                            sDivisor[sCount] = divisor;
-                            sQuotient[sCount] = quotient;
-                            sRemainder[sCount] = remainder;
-                            sCount++;
-
-                            if (remainder == 0) {
-                                sb.append(String.format("%,d = %,d(%,d)\n", dividend, divisor, quotient));
-                                gcd = divisor;
-                                break;
-                            } else {
-                                sb.append(String.format("%,d = %,d(%,d) + %,d\n", dividend, divisor, quotient, remainder));
+                        if (divisor == 0){
+                            gcd = dividend;
+                            result += String.format("%,d = %,d(0) + %,d\n", dividend, divisor, dividend);
+                        } else {
+                            while (true) {
+                                quotient = dividend / divisor;
+                                remainder = dividend % divisor;
+    
+                                sDividend[sCount] = dividend;
+                                sDivisor[sCount] = divisor;
+                                sQuotient[sCount] = quotient;
+                                sRemainder[sCount] = remainder;
+                                sCount++;
+    
+                                if (remainder == 0) {
+                                    sb.append(String.format("%,d = %,d(%,d)\n", dividend, divisor, quotient));
+                                    gcd = divisor;
+                                    break;
+                                } else {
+                                    sb.append(String.format("%,d = %,d(%,d) + %,d\n", dividend, divisor, quotient, remainder));
+                                }
+                                dividend = divisor;
+                                divisor = remainder;
                             }
-                            dividend = divisor;
-                            divisor = remainder;
-                        }
+                            }
 
                         lcm = (m * n) / gcd;
 

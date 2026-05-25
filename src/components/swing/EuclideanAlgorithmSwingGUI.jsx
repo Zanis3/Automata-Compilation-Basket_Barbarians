@@ -14,8 +14,8 @@ export default function EuclideanAlgorithmSwingGUI() {
       return;
     }
 
-    if (a == 0 || b == 0){
-      setOutput("One or both values are zero. Please try again.");
+    if (a == 0 && b == 0){
+      setOutput("Both values are zero. Undefined.");
       return;
     }
 
@@ -27,34 +27,39 @@ export default function EuclideanAlgorithmSwingGUI() {
     let gcd = 0;
     let result = "SOLUTION:\n";
 
-    while (true) {
-      const quotient = Math.floor(dividend / divisor);
-      const remainder = dividend % divisor;
-
-      if (remainder === 0) {
-        result +=
-          dividend.toLocaleString() +
-          " = " +
-          divisor.toLocaleString() +
-          "(" +
-          quotient.toLocaleString() +
-          ")\n";
-        gcd = divisor;
-        break;
-      } else {
-        result +=
-          dividend +
-          " = " +
-          divisor +
-          "(" +
-          quotient +
-          ")" +
-          " + " +
-          remainder +
-          "\n";
+    if(divisor == 0){
+      gcd = dividend;
+      result += `${dividend.toLocaleString()} = ${divisor.toLocaleString()}(0) + ${dividend.toLocaleString()}\n`;
+    } else {
+      while (true) {
+        const quotient = Math.floor(dividend / divisor);
+        const remainder = dividend % divisor;
+  
+        if (remainder === 0) {
+          result +=
+            dividend.toLocaleString() +
+            " = " +
+            divisor.toLocaleString() +
+            "(" +
+            quotient.toLocaleString() +
+            ")\n";
+          gcd = divisor;
+          break;
+        } else {
+          result +=
+            dividend +
+            " = " +
+            divisor +
+            "(" +
+            quotient +
+            ")" +
+            " + " +
+            remainder +
+            "\n";
+        }
+        dividend = divisor;
+        divisor = remainder;
       }
-      dividend = divisor;
-      divisor = remainder;
     }
 
     const lcm = (m * n) / gcd;
