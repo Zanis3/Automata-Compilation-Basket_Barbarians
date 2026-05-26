@@ -16,12 +16,12 @@ export default function CollatzSwingGUI() {
 
     result +=
       "This program will find all the terms of the Collatz sequence.\n\n";
-    result += "Initial value: " + n.toLocaleString() + "\n";
+    result += "Initial value: " + n + "\n";
     result += "The Collatz sequence are:\n";
 
     let current = n;
     while (current !== 1) {
-      result += current.toLocaleString() + " ➜ ";
+      result += current + " , ";
       if (current % 2 === 0) {
         current = current / 2;
       } else {

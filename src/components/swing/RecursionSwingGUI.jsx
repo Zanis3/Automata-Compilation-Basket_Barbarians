@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function buildSequenceString(seq) {
-  return seq.map((n) => (n >= 1000 ? n.toLocaleString() : n)).join(" , ");
+  return seq.map((n) => (n >= 1000 ? n : n)).join(" , ");
 }
 
 export default function RecursionSwingGUI() {
@@ -16,7 +16,9 @@ export default function RecursionSwingGUI() {
   const computeFibonacci = () => {
     const n = parseInt(fibInput.trim());
     if (isNaN(n) || !Number.isInteger(n) || n <= 2) {
-      setFibOutput("Invalid input. Number of terms must be a whole number greater than 2.");
+      setFibOutput(
+        "Invalid input. Number of terms must be a whole number greater than 2.",
+      );
       return;
     }
     const seq = new Array(n);
